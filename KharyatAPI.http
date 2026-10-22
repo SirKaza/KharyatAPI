@@ -1,6 +1,32 @@
-@KharyatAPI_HostAddress = http://localhost:5275
+@baseUrl = http://localhost:5275
 
-GET {{KharyatAPI_HostAddress}}/weatherforecast/
-Accept: application/json
+### Get All
+GET {{baseUrl}}/api/videogames
 
-###
+### Get by ID
+GET {{baseUrl}}/api/videogames/4
+
+### Create videogame
+POST {{baseUrl}}/api/videogames
+Content-Type: application/json
+
+{
+  "id": 4,
+  "title": "Celeste",
+  "genre": "Platformer",
+  "releaseYear": 2018
+}
+
+### Update videogame
+PUT {{baseUrl}}/api/videogames/4
+Content-Type: application/json
+
+{
+  "id": 4,
+  "title": "Celeste",
+  "genre": "Platformer",
+  "releaseYear": 2018
+}
+
+### Delete videogame
+DELETE {{baseUrl}}/api/videogames/4

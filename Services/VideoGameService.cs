@@ -38,4 +38,42 @@ public class VideoGameService
     {
         return games.FirstOrDefault(game => game.Id == id);
     }
+
+    public VideoGame? Add(VideoGame game)
+    {
+        if (games.Any(existing => existing.Id == game.Id))
+        {
+            return null;
+        }
+
+        games.Add(game);
+
+        return game;
+    }
+
+    public bool Update(int id, VideoGame updatedGame)
+    {
+        var game = GetById(id);
+
+        if (game is null)
+            return false;
+
+        game.Title = updatedGame.Title;
+        game.Genre = updatedGame.Genre;
+        game.ReleaseYear = updatedGame.ReleaseYear;
+
+        return true;
+    }
+
+    public bool Delete(int id)
+    {
+        var game = GetById(id);
+
+        if(game is null)
+            return false;
+
+        games.Remove(game);
+
+        return true;
+    }
 }

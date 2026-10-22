@@ -31,3 +31,4 @@ E:\KharyatAPI\obj\Debug\net10.0\refint\KharyatAPI.dll
 E:\KharyatAPI\obj\Debug\net10.0\KharyatAPI.pdb
 E:\KharyatAPI\obj\Debug\net10.0\KharyatAPI.genruntimeconfig.cache
 E:\KharyatAPI\obj\Debug\net10.0\ref\KharyatAPI.dll
+E:\KharyatAPI\obj\Debug\net10.0\KharyatAPI.sourcelink.json

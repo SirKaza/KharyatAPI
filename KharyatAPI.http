@@ -4,7 +4,7 @@
 GET {{baseUrl}}/api/videogames
 
 ### Get by ID
-GET {{baseUrl}}/api/videogames/4
+GET {{baseUrl}}/api/videogames/1
 
 ### Create videogame
 POST {{baseUrl}}/api/videogames
@@ -30,3 +30,39 @@ Content-Type: application/json
 
 ### Delete videogame
 DELETE {{baseUrl}}/api/videogames/4
+
+
+
+
+### Empty title: return 400
+POST {{baseUrl}}/api/videogames
+Content-Type: application/json
+
+{
+  "id": 10,
+  "title": "",
+  "genre": "RPG",
+  "releaseYear": 2020
+}
+
+### Year not valid: return 400
+POST {{baseUrl}}/api/videogames
+Content-Type: application/json
+
+{
+  "id": 11,
+  "title": "Mi juego",
+  "genre": "RPG",
+  "releaseYear": 1800
+}
+
+### Valid values: return 201
+POST {{baseUrl}}/api/videogames
+Content-Type: application/json
+
+{
+  "id": 12,
+  "title": "Hades",
+  "genre": "Roguelike",
+  "releaseYear": 2020
+}

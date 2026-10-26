@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KharyatAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02d8d091bee17a045daf04063875f0fb2a9b9d37")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ecd33665282613757bf8473e78232ae1a44fca4")]
 [assembly: System.Reflection.AssemblyProductAttribute("KharyatAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KharyatAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

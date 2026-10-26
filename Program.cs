@@ -28,12 +28,11 @@ app.MapGet("/api/videogames/{id:int}", (int id, VideoGameService service) =>
 
 app.MapPost("/api/videogames", (VideoGame game, VideoGameService service) =>
 {
-    if (game.Id <= 0 ||
-        string.IsNullOrWhiteSpace(game.Title) ||
-        string.IsNullOrWhiteSpace(game.Genre) ||
-        game.ReleaseYear <= 0)
+    var errors = VideoGameValidator.Validate(game);
+
+    if (errors.Count > 0)
     {
-        return Results.BadRequest("VideoGame values are not valid.");
+        return Results.ValidationProblem(errors);
     }
 
     var createdGame = service.Add(game);
@@ -46,11 +45,11 @@ app.MapPost("/api/videogames", (VideoGame game, VideoGameService service) =>
 
 app.MapPut("/api/videogames/{id:int}",(int id, VideoGame updatedGame, VideoGameService service) => 
 {
-    if (string.IsNullOrWhiteSpace(updatedGame.Title) ||
-        string.IsNullOrWhiteSpace(updatedGame.Genre) ||
-        updatedGame.ReleaseYear <= 0)
+    var errors = VideoGameValidator.Validate(updatedGame);
+
+    if (errors.Count > 0)
     {
-        return Results.BadRequest("VideoGame values are not valid.");
+        return Results.ValidationProblem(errors);
     }
 
     if (!service.Update(id, updatedGame))

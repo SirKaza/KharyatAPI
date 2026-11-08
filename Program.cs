@@ -1,10 +1,13 @@
 using KharyatAPI.Models;
 using KharyatAPI.Services;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
+using Microsoft.EntityFrameworkCore;
+using KharyatAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<VideoGameService>();
+
+builder.Services.AddDbContext<VideoGameContext>(options => options.UseSqlite("Data Source=videogames.db"));
 
 var app = builder.Build();
 
